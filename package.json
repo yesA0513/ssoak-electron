@@ -1,0 +1,53 @@
+{
+    "name": "ssoak",
+    "version": "1.0.0",
+    "description": "ssoak",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "deploy:osx": "electron-builder --mac",
+        "deploy:win": "npm run deploy:win32 && npm run deploy:win64",
+        "deploy:win32": "electron-builder --win nsis:ia32",
+        "deploy:win64": "electron-builder --win nsis:x64"
+    },
+    "build": {
+        "productName": "ssoak",
+        "appId": "net.jetalab.ex.startelectron",
+        "asar": true,
+        "mac": {
+            "target": [
+                "default"
+            ]
+        },
+        "dmg": {
+            "title": "ssoak"
+        },
+        "win": {
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowToChangeInstallationDirectory": false,
+            "createDesktopShortcut": true
+        },
+        "directories": {
+            "buildResources": "./resources/installer/",
+            "output": "./dist/",
+            "app": "."
+        }
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^17.1.1",
+        "electron-builder": "^22.14.13"
+    }
+}
