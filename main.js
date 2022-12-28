@@ -1,8 +1,8 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 380,
@@ -11,6 +11,10 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js')
     }
   })
+
+  //icon
+  mainWindow.setIcon(path.join(__dirname, 'assets/icons/icon.png'))
+  mainWindow.setMenuBarVisibility(false)
 
   // and load the index.html of the app.
   mainWindow.loadURL('https://sungil.me/index.html')

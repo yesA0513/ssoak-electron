@@ -1,7 +1,7 @@
 {
-    "name": "ssoak",
+    "name": "쏙",
     "version": "1.0.0",
-    "description": "ssoak",
+    "description": "성일고의 모든 정보, 한눈에 쏙",
     "main": "main.js",
     "scripts": {
         "start": "electron .",
